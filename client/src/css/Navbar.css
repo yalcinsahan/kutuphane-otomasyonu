@@ -1,0 +1,23 @@
+.navbar-dark{
+    background-color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 18px;
+    margin: 0 !important;
+    margin-left: 10px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.nav-link:hover{
+    color: black !important;
+    background-color: white;
+    margin: 0 !important;
+    margin-left: 10px !important;
+}
