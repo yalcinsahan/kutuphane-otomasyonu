@@ -17,6 +17,7 @@ import com.kutuphaneotomasyonu.kutuphane_otomasyonu.exception.ResourceNotFoundEx
 import com.kutuphaneotomasyonu.kutuphane_otomasyonu.model.Kitap;
 import com.kutuphaneotomasyonu.kutuphane_otomasyonu.model.Kullanici;
 import com.kutuphaneotomasyonu.kutuphane_otomasyonu.repository.KitapRepository;
+import com.kutuphaneotomasyonu.kutuphane_otomasyonu.sabitler.Sabitler;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -44,7 +45,8 @@ public class KitapController {
     //veritabanına yeni bir kitap eklemek için
     @PostMapping("")
     public Kitap yeniKitap(@Valid @RequestBody Kitap kitap) {
-        kitap.setDurumu("KÜTÜPHANEDE MEVCUT");
+
+        kitap.setDurumu(Sabitler.kutuphanedekiDurumu);
         return kitapRepository.save(kitap);
     }
 

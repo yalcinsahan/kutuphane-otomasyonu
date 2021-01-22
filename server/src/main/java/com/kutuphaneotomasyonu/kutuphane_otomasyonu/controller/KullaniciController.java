@@ -11,6 +11,7 @@ import javax.validation.Valid;
 import com.kutuphaneotomasyonu.kutuphane_otomasyonu.exception.ResourceNotFoundException;
 import com.kutuphaneotomasyonu.kutuphane_otomasyonu.model.Kullanici;
 import com.kutuphaneotomasyonu.kutuphane_otomasyonu.repository.KullaniciRepository;
+import com.kutuphaneotomasyonu.kutuphane_otomasyonu.sabitler.Sabitler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +35,8 @@ public class KullaniciController {
     //veritabanına yeni bir kullanıcı eklemek için
     @PostMapping("")
     public Kullanici yeniKullanici(@Valid @RequestBody Kullanici kullanici) {
-        kullanici.setRol("üye");
+
+        kullanici.setRol(Sabitler.rolTipi);
         return kullaniciRepository.save(kullanici);
     }
 
